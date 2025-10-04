@@ -1,0 +1,384 @@
+/* Nexus AI - Global Styles */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-vintage-white text-vintage-black;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  }
+  
+  * {
+    @apply border-vintage-gray-200;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Selection styles */
+  ::selection {
+    @apply bg-vintage-black text-vintage-white;
+  }
+  
+  /* Scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-vintage-gray-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-vintage-gray-400 rounded-full;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-vintage-gray-600;
+  }
+}
+
+@layer components {
+  /* Enhanced Button Styles */
+  .btn-primary {
+    @apply bg-vintage-black text-vintage-white px-4 py-2 rounded-lg font-medium text-sm
+           transition-all duration-300 ease-out
+           hover:bg-vintage-gray-800 hover:shadow-vintage hover:scale-105
+           active:scale-95 active:bg-vintage-gray-900
+           focus:outline-none focus:ring-2 focus:ring-vintage-gray-400
+           relative overflow-hidden;
+  }
+  
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent
+           translate-x-[-100%] transition-transform duration-500;
+  }
+  
+  .btn-primary:hover::before {
+    @apply translate-x-[100%];
+  }
+  
+  .btn-secondary {
+    @apply bg-vintage-white border border-vintage-gray-300 text-vintage-black px-4 py-2 rounded-lg font-medium text-sm
+           transition-all duration-300 ease-out
+           hover:bg-vintage-gray-50 hover:border-vintage-gray-400 hover:shadow-paper hover:scale-105
+           active:scale-95 active:bg-vintage-gray-100
+           focus:outline-none focus:ring-2 focus:ring-vintage-gray-300;
+  }
+  
+  .btn-outline {
+    @apply border border-vintage-black text-vintage-black px-4 py-2 rounded-lg font-medium text-sm
+           bg-transparent transition-all duration-300 ease-out
+           hover:bg-vintage-black hover:text-vintage-white hover:shadow-vintage hover:scale-105
+           active:scale-95
+           focus:outline-none focus:ring-2 focus:ring-vintage-gray-400;
+  }
+  
+  .btn-ghost {
+    @apply text-vintage-black px-3 py-1.5 rounded-md font-medium text-sm
+           transition-all duration-300 ease-out
+           hover:bg-vintage-gray-100 hover:text-vintage-black
+           active:bg-vintage-gray-200
+           focus:outline-none focus:ring-2 focus:ring-vintage-gray-300;
+  }
+  
+  /* Legacy Vintage Button Classes for Chat Component */
+  .btn-vintage-primary {
+    @apply btn-primary;
+  }
+
+  .btn-vintage-secondary {
+    @apply btn-secondary;
+  }
+
+  .btn-vintage-ghost {
+    @apply btn-ghost;
+  }
+
+  /* Focus utility class */
+  .focus-vintage {
+    @apply focus:outline-none focus:ring-2 focus:ring-vintage-gray-400;
+  }
+
+  /* Chat specific styles */
+  .chat-bubble-user {
+    @apply bg-vintage-black text-vintage-white rounded-2xl rounded-br-sm border-2 border-vintage-black shadow-vintage;
+  }
+
+  .chat-bubble-ai {
+    @apply bg-vintage-white text-vintage-black rounded-2xl rounded-bl-sm border-2 border-vintage-gray-300 shadow-paper;
+  }
+
+  /* Spinner for loading */
+  .spinner-vintage {
+    @apply w-4 h-4 border-2 border-vintage-gray-300 border-t-vintage-black rounded-full animate-spin;
+  }
+
+  /* Vintage typography classes */
+  .text-vintage-title {
+    @apply text-vintage-black font-display font-bold tracking-vintage;
+  }
+
+  .text-vintage-body {
+    @apply text-vintage-gray-700;
+  }
+
+  .text-vintage-caption {
+    @apply text-vintage-gray-500 text-sm;
+  }
+  
+  /* Enhanced Input Styles */
+  .input-primary {
+    @apply w-full px-3 py-2 text-sm border border-vintage-gray-300 rounded-lg
+           bg-vintage-white text-vintage-black placeholder-vintage-gray-500
+           transition-all duration-200 ease-out
+           focus:outline-none focus:ring-2 focus:ring-vintage-gray-400 focus:border-vintage-gray-400
+           hover:border-vintage-gray-400;
+  }
+  
+  .input-primary:disabled {
+    @apply bg-vintage-gray-100 text-vintage-gray-500 cursor-not-allowed;
+  }
+  
+  /* Enhanced Glass Effect */
+  .glass {
+    @apply bg-vintage-white/90 backdrop-blur-md border border-vintage-gray-200/30
+           shadow-vintage;
+  }
+  
+  .glass-dark {
+    @apply bg-vintage-black/90 backdrop-blur-md border border-vintage-gray-800/30
+           shadow-vintage text-vintage-white;
+  }
+  
+  /* Chat Message Styles */
+  .message-user {
+    @apply bg-vintage-black text-vintage-white rounded-2xl rounded-br-md px-4 py-2 max-w-[70%] ml-auto
+           shadow-paper text-sm;
+  }
+  
+  .message-ai {
+    @apply bg-vintage-gray-100 text-vintage-black rounded-2xl rounded-bl-md px-4 py-2 max-w-[80%]
+           shadow-paper border border-vintage-gray-200 text-sm;
+  }
+  
+  /* Loading States */
+  .loading-dots {
+    @apply flex space-x-1;
+  }
+  
+  .loading-dots > div {
+    @apply w-1.5 h-1.5 bg-vintage-gray-400 rounded-full animate-vintage-pulse;
+  }
+  
+  .loading-dots > div:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .loading-dots > div:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  /* Enhanced Card Styles */
+  .card {
+    @apply bg-vintage-white border border-vintage-gray-200 rounded-xl shadow-paper
+           transition-all duration-300 ease-out
+           hover:shadow-vintage hover:border-vintage-gray-300;
+  }
+  
+  .card-compact {
+    @apply bg-vintage-white border border-vintage-gray-200 rounded-lg shadow-paper p-4
+           transition-all duration-300 ease-out
+           hover:shadow-vintage hover:border-vintage-gray-300;
+  }
+  
+  .card-feature {
+    @apply bg-vintage-white border border-vintage-gray-200 rounded-lg p-4 shadow-paper
+           transition-all duration-300 ease-out
+           hover:shadow-vintage hover:border-vintage-gray-300 hover:scale-105;
+  }
+  
+  /* Navigation Styles */
+  .nav-link {
+    @apply text-vintage-black hover:text-vintage-gray-700 px-3 py-1.5 rounded-md text-sm font-medium
+           transition-all duration-200 ease-out
+           hover:bg-vintage-gray-100;
+  }
+  
+  .nav-link-active {
+    @apply bg-vintage-gray-100 text-vintage-black;
+  }
+  
+  /* Enhanced Typography */
+  .heading-xl {
+    @apply text-3xl md:text-4xl font-bold tracking-vintage;
+  }
+  
+  .heading-lg {
+    @apply text-2xl md:text-3xl font-semibold tracking-vintage;
+  }
+  
+  .heading-md {
+    @apply text-xl md:text-2xl font-semibold tracking-vintage;
+  }
+  
+  .heading-sm {
+    @apply text-lg md:text-xl font-semibold tracking-vintage;
+  }
+  
+  .text-compact {
+    @apply text-sm leading-5;
+  }
+  
+  .text-micro {
+    @apply text-xs leading-4;
+  }
+  
+  /* Aesthetic Elements */
+  .decorative-line {
+    @apply h-px bg-gradient-to-r from-transparent via-vintage-gray-300 to-transparent;
+  }
+  
+  .decorative-dots {
+    @apply flex justify-center space-x-1;
+  }
+  
+  .decorative-dots::before,
+  .decorative-dots::after {
+    content: '•';
+    @apply text-vintage-gray-400 text-xs;
+  }
+  
+  .aesthetic-border {
+    @apply border-l-2 border-vintage-gray-300 pl-4;
+  }
+  
+  /* Vintage Markdown Styles */
+  .prose-vintage {
+    @apply prose prose-sm max-w-none;
+  }
+  
+  .prose-vintage h1 {
+    @apply text-lg font-semibold mb-2 mt-4 first:mt-0;
+  }
+  
+  .prose-vintage h2 {
+    @apply text-base font-semibold mb-1.5 mt-3;
+  }
+  
+  .prose-vintage h3 {
+    @apply text-sm font-semibold mb-1 mt-2;
+  }
+  
+  .prose-vintage p {
+    @apply mb-2 text-sm leading-5;
+  }
+  
+  .prose-vintage ul,
+  .prose-vintage ol {
+    @apply mb-2 pl-4 text-sm;
+  }
+  
+  .prose-vintage li {
+    @apply mb-0.5;
+  }
+  
+  .prose-vintage strong {
+    @apply font-semibold text-vintage-black;
+  }
+  
+  .prose-vintage em {
+    @apply italic;
+  }
+  
+  .prose-vintage code {
+    @apply bg-vintage-gray-100 px-1 py-0.5 rounded text-xs font-mono;
+  }
+  
+  .prose-vintage pre {
+    @apply bg-vintage-gray-900 text-vintage-gray-100 p-3 rounded-lg text-xs overflow-x-auto;
+  }
+  
+  .prose-vintage blockquote {
+    @apply border-l-2 border-vintage-gray-300 pl-3 italic text-vintage-gray-700;
+  }
+  
+  /* Scroll Styles */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #A3A3A3 transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #A3A3A3;
+    border-radius: 2px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: #737373;
+  }
+  
+  /* Compact Spacing */
+  .space-compact > * + * {
+    margin-top: 0.75rem;
+  }
+  
+  .space-micro > * + * {
+    margin-top: 0.5rem;
+  }
+}
+
+@layer utilities {
+  /* Custom utilities for vintage design */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  
+  .animation-delay-700 {
+    animation-delay: 700ms;
+  }
+  
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+}
