@@ -1,9 +1,9 @@
 {
-  "name": "docwise-ai",
+  "name": "docubot-ai",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "AI-powered PDF analysis platform with vintage aesthetics",
+  "description": "AI-powered PDF analysis website",
   "scripts": {
     "dev": "vite --open",
     "build": "tsc && vite build",
