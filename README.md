@@ -1,4 +1,4 @@
-# DocWise AI
+# DocuBot AI
 
 AI-powered PDF analysis platform with vintage aesthetics. Upload PDFs and chat with your documents using advanced AI.
 
