@@ -133,8 +133,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToChat }) => {
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="space-y-4 sm:space-y-6">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-vintage text-vintage-black animate-slide-up">
-                            AI That Reads PDFs<br />
-                            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-vintage-gray-700">You Don't Have To</span>
+                           Chat with your<br /><span>documents </span>
+                            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-vintage-gray-700">in seconds</span>
                         </h1>
 
                         {/* Enhanced decorative elements around hero */}
@@ -263,7 +263,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToChat }) => {
                         <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-xs sm:text-sm text-vintage-gray-600 text-center">
                             <span>AI-Powered PDF Analysis</span>
                             <span className="hidden sm:inline">•</span>
-                            <span>Built with Modern Tech</span>
+                            <span>Built by Team HackAura</span>
                             <span className="hidden sm:inline">•</span>
                             <span>© 2025</span>
                         </div>
