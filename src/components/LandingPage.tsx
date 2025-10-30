@@ -263,7 +263,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onNavigateToChat }) => {
                         <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-xs sm:text-sm text-vintage-gray-600 text-center">
                             <span>AI-Powered PDF Analysis</span>
                             <span className="hidden sm:inline">•</span>
-                            <span>Built by Team HackAura</span>
+                            <span>Built by Prabuddha</span>
                             <span className="hidden sm:inline">•</span>
                             <span>© 2025</span>
                         </div>
